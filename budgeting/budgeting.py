@@ -80,12 +80,14 @@ def category_budget(category_select, total_budget):
 
 def option_two(total_budget):
     while True:
+        # displays the categories and their assigned budgets
         clear_console()
         print(f"Your current total budget is £{total_budget}\nYour current category budgets:")
         for item in range(len(categories_list)):
             print(f"{item + 1}: {categories_list[item].name}, £{categories_list[item].money_allocated}")
         print(f"Your total unspent budget is £{total_budget - sum_budget()}")
 
+        # asks the user to select a category to re-budget
         try:
             category_select = (
                 input("Enter the number of the category budget you want to modify\n(Enter n to go back)\n"))
